@@ -29,7 +29,7 @@ def call(body)
 	}
 	stage('Prod')
 	{
-		print 'Prod stage steps here...
+		print "Prod stage steps here..."
 	}
     }
 }
