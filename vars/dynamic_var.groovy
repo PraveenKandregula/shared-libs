@@ -6,6 +6,7 @@ def call(body) {
     body.resolveStrategy = Closure.DELEGATE_FIRST
     body.delegate = config
     body()
+    def test 
 
-    println "${config}"
+    println "${config.test}"
 }
