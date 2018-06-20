@@ -8,3 +8,4 @@ def call(body) {
     body()
 
     println "${config}"
+}
