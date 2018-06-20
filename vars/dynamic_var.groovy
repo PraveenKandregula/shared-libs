@@ -8,5 +8,11 @@ def call(body) {
     body()
     def test 
 
-    println "${config.test}"
+    node 
+    {
+        stage('Test')
+        {
+	      println "${config.test}"
+        }
+    }
 }
