@@ -9,4 +9,5 @@ String call(mavenGoal){
     rtMaven.run pom: './pom.xml', goals: 'package'
     //rtMaven.deployer.deployArtifacts buildInfo
     //server.publishBuildInfo buildInfo
+    sh 'tree'
 }
