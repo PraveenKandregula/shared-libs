@@ -7,8 +7,8 @@ def call(body)
     body()
     def scm_url
     node{
-	stage('scam-checkout'){
-            gitCheckout()
+	stage('scm-checkout'){
+            gitCheckout.call()
 	}
     }
 }
