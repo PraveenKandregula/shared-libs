@@ -19,7 +19,7 @@ def call(body)
         stage('mvn-build'){
             script{
                 if ("${config.ismvnProject}")
-		    mvnBuild.call("${config.mavenGoal}")
+		    mvnBuild.call("${config.mavenGoal}".toString())
                 else
                     print "This is not maven project"
             }
