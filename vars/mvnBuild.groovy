@@ -6,7 +6,7 @@ String call(mavenGoal){
     rtMaven.tool = 'maven'
     print pwd()
     //def buildInfo = rtMaven.run pom: 'my-app/pom.xml', goals: mavenGoal
-    rtMaven.run pom: 'my-app/pom.xml', goals: "${mavenGoal}"
+    rtMaven.run pom: 'my-app/pom.xml', goals: 'mvn package'
     //rtMaven.deployer.deployArtifacts buildInfo
     //server.publishBuildInfo buildInfo
 }
