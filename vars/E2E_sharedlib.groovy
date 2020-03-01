@@ -25,12 +25,12 @@ def call(body)
 	}
 	stage('Manual approval')
 	{
-		try {
-			input 'Can this be promoted to Prod?'
-		} catch(err) {
-	 	        currentBuild.result = 'SUCCESS'
-		        return
-		}
+		#try {
+		input 'Can this be promoted to Prod?'
+		#} catch(err) {
+	 	#        currentBuild.result = 'SUCCESS'
+		#        return
+		#}
 	}
 	stage('Prod')
 	{
