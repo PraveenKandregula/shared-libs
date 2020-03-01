@@ -9,24 +9,19 @@ def call(body)
     def ismvnProject
     def mavenGoal
     node{
-        //tool{
-        //    maven 'maven'
-        //}
+        stage('Clean-up WORKSPACE'){
+            cleanWs()
+        }
 	stage('scm-checkout'){
             gitCheckout.call("${config.scm_url}")
 	}
         stage('mvn-build'){
-            //steps{
-                script{
-                    if ("${config.ismvnProject}")
-		        mvnBuild.call("${config.mavenGoal}")
-                    else
-                        print "This is not maven project"
-                }
-            //}
-        }
-        stage('Clean WORKSPACE'){
-            cleanWs()
+            script{
+                if ("${config.ismvnProject}")
+		    mvnBuild.call("${config.mavenGoal}")
+                else
+                    print "This is not maven project"
+            }
         }
     }
 }
