@@ -1,0 +1,7 @@
+@Library('shared-lib') _
+git_mvn_sonar_artifactory_pipeline(){
+    scm_url = 'https://github.com/jabedhasan21/java-hello-world-with-maven.git'
+    ismvnProject = 'true'
+    mavenGoal = 'package'
+    sonarScanVar = 'true'
+}
