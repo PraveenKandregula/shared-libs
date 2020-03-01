@@ -25,5 +25,8 @@ def call(body)
                 }
             //}
         }
+        stage('Clean WORKSPACE'){
+            cleanWs()
+        }
     }
 }
