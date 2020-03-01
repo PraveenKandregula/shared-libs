@@ -3,7 +3,7 @@ String call(mavenGoal){
     def rtMaven = Artifactory.newMavenBuild()
     rtMaven.deployer server: server, releaseRepo: 'example-repo-local', snapshotRepo: 'example-repo-local'
     rtMaven.deployer.artifactDeploymentPatterns.addInclude("*.jar")
-    rtMaven.tool = 'maven 3.0.5'
+    rtMaven.tool = 'maven 3.6.3'
     print pwd()
     //def buildInfo = rtMaven.run pom: 'my-app/pom.xml', goals: mavenGoal
     rtMaven.run pom: 'my-app/pom.xml', goals: 'mvn package'
