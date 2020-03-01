@@ -8,7 +8,7 @@ def call(body)
     def scm_url
     def ismvnProject
     def mavenGoal
-    def sonarScan
+    def sonarScanVar
     node{
         stage('Clean-up WORKSPACE'){
             cleanWs()
@@ -26,8 +26,8 @@ def call(body)
         }
         stage('sonar-scan'){
             script{
-                if ("${config.sonarScan}")
-                    sonarScan.call("${config.sonarScan}")
+                if ("${config.sonarScanVar}")
+                    sonarScan.call()
                 else
                     print "Sonar scan is not required"
             }
