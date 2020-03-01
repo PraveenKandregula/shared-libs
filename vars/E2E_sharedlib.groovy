@@ -31,6 +31,7 @@ def call(body)
 	 	        currentBuild.result = 'SUCCESS'
 		        return
 		}
+	}
 	stage('Prod')
 	{
 		print "Prod stage steps here..."
