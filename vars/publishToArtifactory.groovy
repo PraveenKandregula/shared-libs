@@ -7,7 +7,6 @@ String call(){
 	                            "pattern": "target/*.jar",
 		                    "target": "maven-shared-libs-test/maven-shared-libs-test/${currentBuild.displayName}/",
       		                    "recursive": "true",
-		                    //"regexp": "true"
 	                            }
                                   ]	
                      }"""
