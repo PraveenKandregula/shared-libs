@@ -32,5 +32,8 @@ def call(body)
                     print "Sonar scan is not required"
             }
         }
+        stage('publish to Artifactory'){
+            publishToArtifactory.call()    
+        }
     }
 }
