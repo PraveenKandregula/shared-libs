@@ -1,6 +1,7 @@
 String call(mavenStep){
-    sh '''
+    sh'''
       cd my-app
-      "${mavenStep}"
+      pwd
+      $mavenStep
     '''
 }
