@@ -9,7 +9,7 @@ def call(body)
     def ismvnProject
     def mavenGoal
     node{
-        tools{
+        tool{
             maven 'maven'
         }
 	stage('scm-checkout'){
