@@ -1,5 +1,6 @@
 String call(){
     def server = Artifactory.server('artifactory')
+    def buildInfo = Artifactory.newBuildInfo()
     def uploadSpec = """{
 	                 "files": [{
 	                            "pattern": "target/\\*.jar",
