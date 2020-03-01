@@ -1,11 +1,11 @@
 String call(mavenGoal){
-    steps{
-        script{
+    //steps{
+        //script{
             sh'''
              cd my-app
              pwd
              $mavenGoal
             '''
-        }
-    }
+        //}
+    //}
 }

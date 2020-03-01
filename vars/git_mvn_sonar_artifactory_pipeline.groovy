@@ -9,15 +9,20 @@ def call(body)
     def ismvnProject
     def mavenGoal
     node{
+        tools{
+            maven 'maven'
+        }
 	stage('scm-checkout'){
             gitCheckout.call("${config.scm_url}")
 	}
         stage('mvn-build'){
-            script{
-                if ("${config.ismvnProject}")
-		    mvnBuild.call("${config.mavenGoal}")
-                else
-                    print "This is not maven project"
+            steps{
+                script{
+                    if ("${config.ismvnProject}")
+		        mvnBuild.call("${config.mavenGoal}")
+                    else
+                        print "This is not maven project"
+                }
             }
         }
     }
