@@ -16,14 +16,14 @@ def call(body)
             gitCheckout.call("${config.scm_url}")
 	}
         stage('mvn-build'){
-            steps{
+            //steps{
                 script{
                     if ("${config.ismvnProject}")
 		        mvnBuild.call("${config.mavenGoal}")
                     else
                         print "This is not maven project"
                 }
-            }
+            //}
         }
     }
 }
