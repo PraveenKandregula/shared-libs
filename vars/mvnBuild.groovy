@@ -5,7 +5,8 @@ String call(mavenGoal){
     rtMaven.deployer.artifactDeploymentPatterns.addInclude("*.jar")
     rtMaven.tool = 'maven'
     print pwd()
-    def buildInfo = rtMaven.run pom: 'my-app/pom.xml', goals: mavenGoal
-    rtMaven.deployer.deployArtifacts buildInfo
-    server.publishBuildInfo buildInfo
+    //def buildInfo = rtMaven.run pom: 'my-app/pom.xml', goals: mavenGoal
+    rtMaven.run pom: 'my-app/pom.xml', goals: mavenGoal
+    //rtMaven.deployer.deployArtifacts buildInfo
+    //server.publishBuildInfo buildInfo
 }
