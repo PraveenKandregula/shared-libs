@@ -3,11 +3,11 @@ String call(){
     def uploadSpec = """{
 	                 "files": [{
 	                            "pattern": "target/\\*.jar",
-		                    "target": "example-repo-local/${currentBuild.displayName}",
+		                    "target": "maven-shared-libs-test/maven-shared-libs-test/${currentBuild.displayName}",
       		                    "recursive": "true",
 		                    "regexp": "true"
 	                          }]	
                      }"""
-    def buildInfo = server.upload(spec: uploadSpec)
-    server.publishBuildInfo(buildInfo)
+    server.upload spec: uploadSpec, buildInfo: buildInfo
+    server.publishBuildInfo buildInfo
 }
