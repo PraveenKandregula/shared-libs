@@ -9,9 +9,9 @@ def call(body)
     def ismvnProject
     def mavenGoal
     node{
-        tool{
-            maven 'maven'
-        }
+        //tool{
+        //    maven 'maven'
+        //}
 	stage('scm-checkout'){
             gitCheckout.call("${config.scm_url}")
 	}
