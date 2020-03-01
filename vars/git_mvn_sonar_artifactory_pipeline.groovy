@@ -27,7 +27,7 @@ def call(body)
         stage('sonar-scan'){
             script{
                 if ("${config.sonarScan}")
-                    sonarScan.call()
+                    sonarScan.call("${config.sonarScan}")
                 else
                     print "Sonar scan is not required"
             }
