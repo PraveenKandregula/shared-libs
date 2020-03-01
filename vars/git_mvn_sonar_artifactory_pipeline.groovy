@@ -7,7 +7,7 @@ def call(body)
     body()
     def scm_url
     def ismvnProject
-    def mavenStep
+    def mavenGoal
     node{
 	stage('scm-checkout'){
             gitCheckout.call("${config.scm_url}")
@@ -15,7 +15,7 @@ def call(body)
         stage('mvn-build'){
             script{
                 if ("${config.ismvnProject}")
-		    mvnBuild.call("${config.mavenStep}")
+		    mvnBuild.call("${config.mavenGoal}")
                 else
                     print "This is not maven project"
             }

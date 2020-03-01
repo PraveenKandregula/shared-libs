@@ -1,7 +1,11 @@
-String call(mavenStep){
-    sh'''
-      cd my-app
-      pwd
-      $mavenStep
-    '''
+String call(mavenGoal){
+    steps{
+        script{
+            sh'''
+             cd my-app
+             pwd
+             $mavenGoal
+            '''
+        }
+    }
 }
