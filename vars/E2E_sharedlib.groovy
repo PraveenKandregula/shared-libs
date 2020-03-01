@@ -25,8 +25,12 @@ def call(body)
 	}
 	stage('Manual approval')
 	{
-		input 'Can this be promoted to Prod?'
-	}
+		try {
+			input 'Can this be promoted to Prod?'
+		} catch(err) {
+	 	        currentBuild.result = 'SUCCESS'
+		        return
+		}
 	stage('Prod')
 	{
 		print "Prod stage steps here..."
