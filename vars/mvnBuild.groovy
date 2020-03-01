@@ -4,7 +4,7 @@ String call(mavenGoal){
     rtMaven.deployer server: server, releaseRepo: 'example-repo-local', snapshotRepo: 'example-repo-local'
     rtMaven.deployer.artifactDeploymentPatterns.addInclude("*.jar")
     rtMaven.tool = 'maven'
-    def buildInfo = rtMaven.run pom: 'maven-example/pom.xml', goals: mavenGoal
+    def buildInfo = rtMaven.run pom: 'my-app/pom.xml', goals: mavenGoal
     rtMaven.deployer.deployArtifacts buildInfo
     server.publishBuildInfo buildInfo
 }
