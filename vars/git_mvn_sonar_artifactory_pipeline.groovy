@@ -8,7 +8,7 @@ def call(body)
     def scm_url
     node{
 	stage('scm-checkout'){
-            gitCheckout.call()
+            gitCheckout.call("${config.scm_url}")
 	}
     }
 }

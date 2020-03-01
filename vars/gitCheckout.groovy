@@ -1,4 +1,4 @@
-String call(){
+String call(scm_url){
     checkout changelog: false, 
              poll: false, 
              scm: [$class: 'GitSCM', 
@@ -6,7 +6,7 @@ String call(){
                    doGenerateSubmoduleConfigurations: false, 
                    extensions: [], 
                    submoduleCfg: [], 
-                   userRemoteConfigs: [[url: "${config.scm_url}"]]
+                   userRemoteConfigs: [[url: "${scm_url}"]]
                   ]    
 }
 
