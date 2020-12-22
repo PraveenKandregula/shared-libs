@@ -14,6 +14,6 @@ class Pipeline {
 	//System.out.println $configurationFile
 	//echo "Script: ${script.dump()}"
 	//echo "Config file: ${configurationFile.dump()}"
-	echo "This is execute method"
+	print "This is execute method"
     }
 }
