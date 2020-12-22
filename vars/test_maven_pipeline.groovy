@@ -1,4 +1,8 @@
 import groovy.json.JsonSlurper
+import org.yaml.snakeyaml.Yaml
+import org.yaml.snakeyaml.DumperOptions
+import static org.yaml.snakeyaml.DumperOptions.FlowStyle.BLOCK
+
 def call(body) 
 {
     def config =[:]
@@ -15,6 +19,7 @@ def call(body)
 	    checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, userRemoteConfigs: [[credentialsId: 'scm_credential', url: config.git_repo_url]]])
 	}
 	stage('Parse config.yml'){
+	    fileExists 'config.yml'
 	    def ymlData = readYaml file:"${WORKSPACE}/config.yml"
 	    echo ymlData
 	}
