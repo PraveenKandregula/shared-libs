@@ -12,7 +12,7 @@ class Pipeline {
     def execute() {
 	//System.out.println $script
 	//System.out.println $configurationFile
-	//echo "Script: ${script.toString()}"
-	echo "Config file: ${configurationFile.toString()}"
+	echo "Script: ${script.dump()}"
+	echo "Config file: ${configurationFile.dump()}"
     }
 }
