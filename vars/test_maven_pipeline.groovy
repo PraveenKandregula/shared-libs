@@ -9,7 +9,8 @@ def call(body)
 
     node{
 	stage('Checkout'){
-	    echo "Checking out ${config.git_repo_url}"
+	    //echo "Checking out ${config.git_repo_url}"
+	    echo "Current workspace ${WORKSPACE}"
 	    //checkout scm: [$class: 'GitSCM', branches: [[name: '*/master']], userRemoteConfigs: [[url: git_repo_url]]]
 	    checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, userRemoteConfigs: [[credentialsId: 'scm_credential', url: config.git_repo_url]]])
 	}
