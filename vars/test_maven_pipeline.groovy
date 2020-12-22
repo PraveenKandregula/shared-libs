@@ -28,8 +28,8 @@ def call(body)
 	    //echo ymlData
 	}
 	stage('Build'){
-	    echo ymlData['build']['projectFolder']
-	    echo ymlData['build']['buildCommand']
+	    echo ymlData.get('build').get('projectFolder')
+	    echo ymlData.get('build').get('buildCommand')
 	}
     }
 }
