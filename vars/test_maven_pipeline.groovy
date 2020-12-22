@@ -24,7 +24,7 @@ def call(body)
 	    if (fileStatus)
 		echo "${config.yml_file_name} is found"
 	    else{
-		echo ""${config.yml_file_name} is not found"
+		echo "${config.yml_file_name} is not found"
 	    }	        
 	    def ymlData = readFile "${WORKSPACE}/${config.yml_file_name}"
 	    echo ymlData
