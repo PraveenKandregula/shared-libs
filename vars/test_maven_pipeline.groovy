@@ -9,9 +9,9 @@ def call(body)
 
     node{
 	stage('Checkout'){
-	    echo "Checking out ${git_repo_url}"
+	    echo "Checking out ${config.git_repo_url}"
 	    //checkout scm: [$class: 'GitSCM', branches: [[name: '*/master']], userRemoteConfigs: [[url: git_repo_url]]]
-	    checkout([$class: 'GitSCM', doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'scm_credential', refspec: '+refs/heads/master:refs/remotes/origin/master', url: git_repo_url]]])
+	    checkout([$class: 'GitSCM', doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'scm_credential', refspec: '+refs/heads/master:refs/remotes/origin/master', url: config.git_repo_url]]])
 	}
 	
     }
