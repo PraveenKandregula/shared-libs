@@ -24,8 +24,11 @@ def call(body)
 	    else{
 		echo "${config.yml_file_name} is not found"
 	    }	        
-	    ymlData = readFile "${WORKSPACE}/${config.yml_file_name}"
-	    //echo ymlData
+	    //ymlData = readFile "${WORKSPACE}/${config.yml_file_name}"
+	    steps{
+		ymlData = readYaml file: "${WORKSPACE}/${config.yml_file_name}"
+	    }
+	    echo ymlData
 	}
 	stage('Build'){
 	    echo ymlData.get('build').get('projectFolder')
