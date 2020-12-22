@@ -9,6 +9,10 @@ class Pipeline {
     //    this.configurationFile = configurationFile
     //}
 
+    Pipeline(steps) {
+	this.steps=steps
+	print this
+    }
     def execute() {
 	//System.out.println $script
 	//System.out.println $configurationFile
