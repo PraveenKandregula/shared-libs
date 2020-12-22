@@ -3,6 +3,7 @@ package com.example
 class Pipeline {
     def script
     def configurationFile
+    def steps
 
     //Pipeline(script, configurationFile) {
     //    this.script = script
@@ -11,7 +12,7 @@ class Pipeline {
 
     Pipeline(steps) {
 	this.steps=steps
-	print this
+	print this, steps
     }
     def execute() {
 	//System.out.println $script
