@@ -20,7 +20,7 @@ def call(body)
 	    checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, userRemoteConfigs: [[credentialsId: 'scm_credential', url: config.git_repo_url]]])
 	}
 	stage('Parse yml file'){
-	    if fileExists "${config.yml_file_name}"
+	    //if fileExists "${config.yml_file_name}"
 	    def ymlData = readFile "${WORKSPACE}/${yml_file_name}"
 	    echo ymlData
 	}
