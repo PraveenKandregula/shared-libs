@@ -10,6 +10,7 @@ def call(body)
     body.delegate = config
     body()
     def git_repo_url
+    def yml_file_name
 
     node{
 	stage('Checkout'){
@@ -19,8 +20,8 @@ def call(body)
 	    checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, userRemoteConfigs: [[credentialsId: 'scm_credential', url: config.git_repo_url]]])
 	}
 	stage('Parse config.yml'){
-	    fileExists 'config.yml1'
-	    def ymlData = readYaml file:"${WORKSPACE}/config.yml"
+	    echo fileExists config.yml_file_name
+	    def ymlData = readYaml file:"${WORKSPACE}/${yml_file_name}"
 	    echo ymlData
 	}
     }
