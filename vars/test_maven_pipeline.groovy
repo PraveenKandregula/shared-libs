@@ -19,7 +19,7 @@ def call(body)
 	    //checkout scm: [$class: 'GitSCM', branches: [[name: '*/master']], userRemoteConfigs: [[url: git_repo_url]]]
 	    checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, userRemoteConfigs: [[credentialsId: 'scm_credential', url: config.git_repo_url]]])
 	}
-	stage('Parse "${config.yml_file_name}"'){
+	stage('Parse yml file'){
 	    if fileExists "${config.yml_file_name}"
 	    def ymlData = readYaml file:"${WORKSPACE}/${yml_file_name}"
 	    echo ymlData
