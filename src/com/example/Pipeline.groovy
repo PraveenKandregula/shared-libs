@@ -10,9 +10,9 @@ class Pipeline {
     }
 
     def execute() {
-	System.out.println $script
-	System.out.println $configurationFile
-	//echo script
-	//echo configurationFile
+	//System.out.println $script
+	//System.out.println $configurationFile
+	//echo "${script}"
+	//echo "${configurationFile}"
     }
 }
