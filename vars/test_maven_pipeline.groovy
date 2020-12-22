@@ -1,7 +1,4 @@
 import groovy.json.JsonSlurper
-import org.yaml.snakeyaml.Yaml
-import org.yaml.snakeyaml.DumperOptions
-import static org.yaml.snakeyaml.DumperOptions.FlowStyle.BLOCK
 
 def call(body) 
 {
@@ -27,7 +24,11 @@ def call(body)
 		echo "${config.yml_file_name} is not found"
 	    }	        
 	    def ymlData = readFile "${WORKSPACE}/${config.yml_file_name}"
-	    echo ymlData
+	    //echo ymlData
+	}
+	stage('Build'){
+	    echo ymlData['build']['projectFolder']
+	    echo ymlData['build']['buildCommand']
 	}
     }
 }
