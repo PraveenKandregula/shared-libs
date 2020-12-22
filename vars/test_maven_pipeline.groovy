@@ -21,7 +21,7 @@ def call(body)
 	}
 	stage('Parse yml file'){
 	    if fileExists "${config.yml_file_name}"
-	    def ymlData = readYaml file:"${WORKSPACE}/${yml_file_name}"
+	    def ymlData = readFile "${WORKSPACE}/${yml_file_name}"
 	    echo ymlData
 	}
     }
