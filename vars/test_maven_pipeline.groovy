@@ -49,12 +49,14 @@ def call(body)
 	}
 	stage('Test'){
 	    echo "Test stage"
-	    parallel performance: {
-		sh 'mvn clean test -Dscope=performance'
-	    }, regression: {
-		sh 'mvn clean test -Dscope=regression; exit 1'
-	    }, integration: {
-		sh 'mvn clean test -Dscope=integration'
+	    dir("${WORKSPACE}/test"){
+  		parallel performance: {
+		    sh 'mvn clean test -Dscope=performance'
+		}, regression: {
+		    sh 'mvn clean test -Dscope=regression; exit 1'
+		}, integration: {
+		    sh 'mvn clean test -Dscope=integration'
+		}
 	    }
 	}
     }
