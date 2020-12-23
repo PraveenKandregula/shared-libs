@@ -31,8 +31,23 @@ def call(body)
 	    echo ymlData
 	}
 	stage('Build'){
-	    echo ymlData.get('build').get('projectFolder')
-	    echo ymlData.get('build').get('buildCommand')
+	    //echo ymlData.get('build').get('projectFolder')
+	    //echo ymlData.get('build').get('buildCommand')
+	    dir("${WORKSPACE}/project"){
+		sh 'mvn clean test'
+	    }
+	}
+	stage('Database'){
+	    dir("${WORKSPACE}/database"){
+		sh 'mvn clean test -Dscope=FlywayMigration'
+	    }
+	}
+	stage('Deploy'){
+	    dir("${WORKSPACE}/deploy"){
+		sh 'mvn clean install'
+	}
+	stage('Test'){
+	    echo "Test stage"
 	}
     }
     post{
