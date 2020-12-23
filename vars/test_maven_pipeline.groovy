@@ -35,4 +35,13 @@ def call(body)
 	    echo ymlData.get('build').get('buildCommand')
 	}
     }
+    post{
+	success{
+	    echo "Successful"
+	}
+	failure{
+	    echo "Failure"
+	    echo "Send email"
+	}
+    }
 }
