@@ -53,7 +53,8 @@ def call(body)
   		parallel performance: {
 		    sh 'mvn clean test -Dscope=performance'
 		}, regression: {
-		    sh 'mvn clean test -Dscope=regression; exit 1'
+		    //sh 'mvn clean test -Dscope=regression; exit 1'
+		    sh 'mvn clean test -Dscope=regression'
 		}, integration: {
 		    sh 'mvn clean test -Dscope=integration'
 		}
