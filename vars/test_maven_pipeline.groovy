@@ -53,7 +53,7 @@ def call(body)
 		sh 'mvn clean test -Dscope=performance'
 	    }, regression: {
 		sh 'mvn clean test -Dscope=regression; exit 1'
-	    }, integration {
+	    }, integration: {
 		sh 'mvn clean test -Dscope=integration'
 	    }
 	}
