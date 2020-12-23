@@ -43,9 +43,9 @@ def call(body)
 	    }
 	}
 	stage('Deploy'){
-	    //dir("${WORKSPACE}/deploy"){
-	    sh 'mvn clean install'
-	    //}
+	    dir("${WORKSPACE}/database"){
+	        sh 'mvn clean install'
+	    }
 	}
 	stage('Test'){
 	    echo "Test stage"
