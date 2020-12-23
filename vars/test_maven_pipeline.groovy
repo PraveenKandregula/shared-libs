@@ -45,6 +45,7 @@ def call(body)
 	stage('Deploy'){
 	    dir("${WORKSPACE}/deploy"){
 		sh 'mvn clean install'
+	    }
 	}
 	stage('Test'){
 	    echo "Test stage"
