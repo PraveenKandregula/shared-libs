@@ -51,13 +51,13 @@ def call(body)
 	    echo "Test stage"
 	}
     }
-    post{
-	success{
-	    echo "Successful"
-	}
-	failure{
-	    echo "Failure"
-	    echo "Send email"
-	}
-    }
+    //post{
+    //	success{
+    //	    echo "Successful"
+    //	}
+    //	failure{
+    //	    echo "Failure"
+    //	    echo "Send email"
+    //	}
+    //}
 }
